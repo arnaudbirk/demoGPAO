@@ -2,6 +2,10 @@
   "name": "api-gpao",
   "version": "1.0.0",
   "description": "api pour IGN/GPAO",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnaudbirk/demoGPAO.git"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
