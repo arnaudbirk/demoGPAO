@@ -1,0 +1,31 @@
+openapi: 3.0.1
+info:
+  title: API GPAO
+  description: "Documentation de l'API mise en place dans le cadre de la refonte de la GPAO.
+  
+  
+    autre liens :"
+  version: 0.0.2
+externalDocs:
+  description: GitHub de l'API
+  url: 'https://github.com/arnaudbirk/demoGPAO'
+servers:
+  - url: 'http://koolyce.ddns.net/api'
+    description: Serveur de test
+  - url: 'http://localhost/api'
+    description: Serveur de developpement
+    
+paths:
+  '/job':
+    get:
+      tags:
+        - job
+      summary: "Récupération d'un job'"
+      description: "Récupération d'un job avec le statut prêt"
+      responses:
+        'default':
+          description: reponse par default
+      
+tags:
+- name: "job"
+  description: "Tout sur les jobs"
