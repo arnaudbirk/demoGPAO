@@ -20,8 +20,8 @@ app.get('/jobs', db.getFirstJobReady)
 app.post('/jobs', db.insertJob)
 app.put('/jobs/:id', db.updateJob)
 
-app.use('/api/vendor/swagger-editor', express.static(__dirname + '/../node_modules/swagger-editor-dist'));
-app.use('/api/vendor/swagger-ui', express.static(__dirname + '/../node_modules/swagger-ui-dist'));
+app.use('/api/vendor/swagger-editor', express.static(__dirname + 'node_modules/swagger-editor-dist'));
+app.use('/api/vendor/swagger-ui', express.static(__dirname + 'node_modules/swagger-ui-dist'));
 app.use('/api/doc', express.static(__dirname + '/../doc'));
 
 app.listen(port, function () {
