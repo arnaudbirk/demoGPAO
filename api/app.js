@@ -1,6 +1,9 @@
 const express = require('express')
+const cors = require('cors')
 const bodyParser = require('body-parser')
 const port = 3000
+
+const pathToSwaggerUi = require('swagger-ui-dist').absolutePath()
 
 const db = require('./queries')
 
@@ -16,9 +19,14 @@ app.use(function (req, res, next) {
 	next();
 })
 
-app.use('/api/vendor/swagger-editor', express.static(__dirname + '/node_modules/swagger-editor-dist'));
-app.use('/api/vendor/swagger-ui', express.static(__dirname + '/node_modules/swagger-ui-dist'));
+//app.use('/api/vendor/swagger-editor', express.static(__dirname + '/node_modules/swagger-editor-dist/'));
+app.use(express.static(pathToSwaggerUi))
+app.use('/api/vendor/swagger-ui', express.static(__dirname + '/node_modules/swagger-ui-dist/'));
 app.use('/api/doc', express.static(__dirname + '/../doc'));
+
+console.log(__dirname + '/node_modules/swagger-editor-dist/')
+console.log(__dirname + '/node_modules/swagger-ui-dist/')
+console.log(__dirname + '/../doc')
 
 app.get('/', (request, response) => {
   response.json({ info: 'Node.js, Express, and Postgres API' })
